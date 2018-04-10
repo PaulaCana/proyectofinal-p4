@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'legal/privacy'
+  get 'legal/terms'
+  get 'legal/cookies'
   root 'static#home'
   get 'contact' => 'static#contact'
   get 'about_us' => 'static#about_us'
