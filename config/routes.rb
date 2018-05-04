@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
     
-  resources :plans
+  resources :plans do
+    
+    collection do 
+      get 'recents'
+      get 'demanded'
+    end
+    
+  end
+  
+  
+  
+  
 # rutas legales 
   get 'legal/privacy'
   get 'legal/terms'

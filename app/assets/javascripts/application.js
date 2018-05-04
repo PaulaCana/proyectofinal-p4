@@ -11,9 +11,27 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
 //= require foundation
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
+
+/*global$*/
+
 $(function(){ $(document).foundation(); });
+
+$(function() {
+  $(window).scroll(function() {
+    var winTop = $(window).scrollTop();
+    if (winTop >= 30) {
+      $("body").addClass("sticky-shrinknav-wrapper");
+    } else{
+      $("body").removeClass("sticky-shrinknav-wrapper");
+    }
+  });
+});
+

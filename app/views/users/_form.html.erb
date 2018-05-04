@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :birthdate %>
-    <%= form.datetime_select :birthdate %>
+    <%= form.date_field :birthdate , class:'datepicker' %>
   </div>
 
   <div class="field">
@@ -40,3 +40,9 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  $( function() {
+    $( ".datepicker" ).datepicker({dateFormat: 'yy-mm-dd' ,  changeYear: true} );
+  } );
+</script>

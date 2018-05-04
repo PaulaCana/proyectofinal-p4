@@ -13,5 +13,767 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+ *= require jquery-ui
 
  */
+ 
+
+
+/* HEADER */
+
+
+body {
+  padding-top: 330px;
+}
+
+.sticky-shrinknav-menu {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0rem;
+  height: 2.75rem;
+  line-height: 3.75rem;
+  width: 100%;
+  background-color: black;
+  transition: all 0.5s ease;
+}
+
+.sticky-shrinknav-menu li {
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  text-align: center;
+  
+}
+
+.sticky-shrinknav-menu li:hover {
+  box-shadow: 0 0 0 2px #fefefe;
+}
+
+.sticky-shrinknav-menu a {
+  color: #fefefe;
+  animation-delay: 1.2s;
+}
+
+
+
+.sticky-shrinknav-header-title {
+  transition: all 0.3s ease;
+  position: relative;
+  -webkit-transform: translateY(-1.875rem);
+      -ms-transform: translateY(-1.875rem);
+          transform: translateY(-1.875rem);
+  margin-bottom: 0;
+  color: #fefefe;
+}
+
+.sticky-shrinknav-header {
+  width: 100%;
+  height: 300px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url(OCCAMY.png);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+
+
+body.sticky-shrinknav-wrapper {
+  padding-top: 130px;
+}
+
+body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
+  height: 3.75rem;
+  background-color: rgba(23, 121, 186, 0.9);
+}
+
+body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+/* HOME */
+
+.article-row-section {
+  max-width: 75rem;
+  margin-right: 10px;
+  margin-left: 20px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+}
+
+.article-row-section-inner {
+  -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  max-width: 100%;
+}
+
+@media print, screen and (min-width: 40em) {
+  .article-row-section-inner {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  .article-row-section-inner {
+    -webkit-flex: 0 0 83.33333%;
+        -ms-flex: 0 0 83.33333%;
+            flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    max-width: 83.33333%;
+  }
+}
+
+@media print, screen and (min-width: 40em) and (min-width: 40em) {
+  .article-row-section-inner {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+.article-row-section-header {
+  padding: 1.5rem 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.article-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 1px solid #e6e6e6;
+  padding: 1.5rem 0;
+}
+
+@media print, screen and (min-width: 40em) {
+  .article-row {
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.article-row-img img {
+  width: 100%;
+}
+
+@media print, screen and (min-width: 40em) {
+  .article-row-img img {
+    max-width: none;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.article-row-content {
+  padding: 1.5rem 0 0;
+  color: #0a0a0a;
+}
+
+@media print, screen and (min-width: 40em) {
+  .article-row-content {
+    padding: 0 0 0 1.5rem;
+  }
+}
+
+.article-row-content-header {
+  font-size: 1.5rem;
+}
+
+.article-row-content-description {
+  font-size: 1.25rem;
+}
+
+.article-row-content-author,
+.article-row-content-time {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  color: #8a8a8a;
+}
+
+.article-row-reversed .article-row-content {
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  padding: 0 1.5rem 0 0;
+}
+
+.article-row-reversed .article-row-img {
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+  padding: 0 0 1.5rem 0;
+}
+
+@media print, screen and (min-width: 40em) {
+  .article-row-reversed .article-row-content {
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .article-row-reversed .article-row-img {
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+
+
+
+/* FOOTER */
+
+
+#engadget-footer-sitemap-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+  background-color: #0a0a0a;
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  color: #e6e6e6;
+  padding: 3.75rem 0;
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap::before, #engadget-footer-sitemap-container #engadget-footer-sitemap::after {
+  display: table;
+  content: ' ';
+  -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap::after {
+  clear: both;
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap a {
+  color: #e6e6e6 !important;
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column {
+  float: left;
+  width: 50%;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column:nth-of-type(1n) {
+  clear: none;
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column:nth-of-type(2n+1) {
+  clear: both;
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column:last-child {
+  float: left;
+}
+
+@media print, screen and (min-width: 64em) {
+  #engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column {
+    float: left;
+    width: 25%;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) and (min-width: 40em) {
+  #engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  #engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column:nth-of-type(1n) {
+    clear: none;
+  }
+  #engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column:nth-of-type(4n+1) {
+    clear: both;
+  }
+  #engadget-footer-sitemap-container #engadget-footer-sitemap .links > .link-column:last-child {
+    float: left;
+  }
+}
+
+#engadget-footer-sitemap-container #engadget-footer-sitemap .links .link-column:not(:last-child) {
+  border-right: 1px solid #e6e6e6;
+}
+
+#engadget-footer-social-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+  background-color: #8a8a8a;
+}
+
+#engadget-footer-social-container #engadget-footer-social {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  color: #e6e6e6;
+  padding: 3.75rem 0;
+}
+
+#engadget-footer-social-container #engadget-footer-social::before, #engadget-footer-social-container #engadget-footer-social::after {
+  display: table;
+  content: ' ';
+  -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+#engadget-footer-social-container #engadget-footer-social::after {
+  clear: both;
+}
+
+#engadget-footer-social-container #engadget-footer-social a {
+  color: #e6e6e6 !important;
+}
+
+#engadget-footer-social-container #engadget-footer-social .footer-left {
+  width: 100%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-left {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+#engadget-footer-social-container #engadget-footer-social .footer-left:last-child:not(:first-child) {
+  float: right;
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-left {
+    width: 50%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-left {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-left:last-child:not(:first-child) {
+    float: right;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-left {
+    width: 41.66667%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-left {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-left:last-child:not(:first-child) {
+    float: right;
+  }
+}
+
+#engadget-footer-social-container #engadget-footer-social .footer-left .input-group-field {
+  background: #fefefe;
+}
+
+#engadget-footer-social-container #engadget-footer-social .footer-right {
+  text-align: right;
+  width: 100%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-right {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+#engadget-footer-social-container #engadget-footer-social .footer-right:last-child:not(:first-child) {
+  float: right;
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-right {
+    width: 50%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-right {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-social-container #engadget-footer-social .footer-right:last-child:not(:first-child) {
+    float: right;
+  }
+}
+
+#engadget-footer-social-container #engadget-footer-social .fa {
+  padding: 0 0 0 0.6rem;
+}
+
+#engadget-footer-social-container #engadget-footer-social h2 {
+  color: #fefefe;
+}
+
+#engadget-footer-social-container #engadget-footer-social p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+#engadget-footer-contact-details-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+  background-color: #fefefe;
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  color: #8a8a8a;
+  padding: 1.25rem 0;
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details::before, #engadget-footer-contact-details-container #engadget-footer-contact-details::after {
+  display: table;
+  content: ' ';
+  -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details::after {
+  clear: both;
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details a {
+  color: #8a8a8a !important;
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left {
+  width: 100%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left:last-child:not(:first-child) {
+  float: right;
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left li {
+  display: block;
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left {
+    width: 50%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    text-align: left;
+  }
+}
+
+@media print, screen and (min-width: 40em) and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left:last-child:not(:first-child) {
+    float: right;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left {
+    width: 66.66667%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left:last-child:not(:first-child) {
+    float: right;
+  }
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left ul {
+    margin-bottom: 0;
+  }
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left li {
+    display: inline-block;
+  }
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details .footer-left .fa {
+  padding: 0 0.4rem;
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right {
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 39.9375em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right {
+    display: none !important;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right {
+    width: 50%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right:last-child:not(:first-child) {
+    float: right;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right {
+    width: 33.33333%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    text-align: right;
+  }
+}
+
+@media print, screen and (min-width: 64em) and (min-width: 40em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right:last-child:not(:first-child) {
+    float: right;
+  }
+  #engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right ul {
+    padding-top: 1.6rem;
+  }
+}
+
+#engadget-footer-contact-details-container #engadget-footer-contact-details .footer-right .fa {
+  padding: 0 0.4rem;
+}
+
+
+
+
+/* HEAD 2.O */
+
+
+.full-width-testimonial {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)), url("http://www.allspaintravel.com/wp-content/uploads/2017/11/madrid-overview-sunsetovermadrid-xlarge.jpg");
+  background-position: center center;
+}
+
+.full-width-testimonial-icon .quote-path {
+  fill: none;
+  stroke: #ffae00;
+  stroke-width: 2.5192;
+  stroke-miterlimit: 10;
+}
+
+.full-width-testimonial-content,
+.full-width-testimonial-icon {
+  text-align: center;
+}
+
+.full-width-testimonial-section {
+  padding-top: 2rem;
+}
+
+.full-width-testimonial-section .full-width-testimonial-text {
+  font-weight: 300;
+  color: #ffffff;
+
+  margin-top: -5px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 1.5em;
+  background-color: black;
+}
+
+@media print, screen and (min-width: 40em) {
+  .full-width-testimonial-section .full-width-testimonial-text {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  .full-width-testimonial-section .full-width-testimonial-text {
+    padding-left: 180px;
+    padding-right: 180px;
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .full-width-testimonial-section .full-width-testimonial-text {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
+
+.full-width-testimonial-section .full-width-testimonial-source {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-bottom: 0;
+  margin-bottom: 0.2em;
+  font-size: 1.0em;
+}
+
+.full-width-testimonial-section .full-width-testimonial-source-context {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+}
+
+.full-width-testimonial-section .slick-slider {
+  margin-bottom: 0px;
+}
+
+.full-width-testimonial-text,
+.full-width-testimonial-content,
+.full-width-testimonial-source,
+.full-width-testimonial-icon {
+  padding-bottom: 2rem;
+}
+
+.full-width-testimonial-content {
+  width: 100%;
+}
+

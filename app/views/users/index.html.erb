@@ -1,5 +1,30 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="login-box">
+  <div class="grid-x collapse expanded">
+    <div class="small-12 medium-6 cell small-order-2 medium-order-1">
+      <div class="login-box-form-section">
+        <h1 class="login-box-title">Sign up</h1>
+        <input class="login-box-input" type="text" name="username" placeholder="Username" />
+        <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
+        <input class="login-box-input" type="password" name="password" placeholder="Password" />
+        <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
+        <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+      </div>
+     
+    </div>
+    <div class="small-12 medium-6 cell small-order-1 medium-order-2 login-box-social-section">
+      <div class="login-box-social-section-inner">
+        <span class="login-box-social-headline">Sign in with<br />your social network</span>
+        <a class="login-box-social-button-facebook">Log in with facebook</a>
+        <a class="login-box-social-button-twitter">Log in with Twitter</a>
+        <a class="login-box-social-button-google">Log in with Google+</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <h1>Users</h1>
 
 <table>
@@ -26,7 +51,7 @@
         <td><%= link_to 'Profile', profile_user_path(user) %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', user, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -7,6 +7,17 @@ class PlansController < ApplicationController
     @plans = Plan.all
   end
 
+  def recents
+    @plans = Plan.order(created_at: :desc).limit(9)
+  end
+  
+  def demanded
+    @plans = Plan.order(created_at: :desc).limit(9)
+  end
+  
+  
+  def 
+
   # GET /plans/1
   # GET /plans/1.json
   def show
